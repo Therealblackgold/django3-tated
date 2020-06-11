@@ -1,0 +1,33 @@
+{% extends 'side/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- code bellow counts the number of blogs
+pluralize is to add s to blog if we have more than one. -->
+<h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
+<h2 class="text-center mb-5"> Taded_sa has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2>
+
+{% for blog in blogs %}
+<!-- **************************** -->
+<section class="section-downloads">
+  <div class="col span-1-of-4 box">
+    <a href="{% url 'blog:detail' blog.id %}">
+      <div class="card-blog">
+        <img src="{{ blog.image.url }}" class="img-fluid mb-2">
+        <h2>{{ blog.title }}</h2>
+    </a>
+    <h5>{{ blog.date|date:'M d Y'| upper }}</h5>
+    <p>
+      {{ blog.description|striptags|truncatechars:100 }}
+    </p>
+    <br>
+    <a class="btn btn-ghost js--scroll-to-plans" href="{% url 'blog:detail' blog.id %}">VIEW</a>
+  </div>
+  </div>
+</section>
+<!-- ************************************** -->
+{% endfor %}
+
+{% endblock %}

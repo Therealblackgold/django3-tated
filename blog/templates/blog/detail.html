@@ -1,0 +1,19 @@
+{% extends 'side/base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<section class="section-downloads">
+  <div class="row js--wp-1">
+    <div class="col span-2-of-4 box">
+      <div class="card-blog">
+        <img src="{{ blog.image.url }}" class="img-fluid mb-2">
+
+        <h2>{{ blog.title }}</h2>
+        <!-- date format here j adds date and S adds 2nd,20th to the end of a number. -->
+        <h5 class="text-center text-muted mb-5">{{ blog.date|date:'F jS Y' }}</h5>
+        <p>{{ blog.description|safe }}</p>
+      </div>
+    </div>
+</section>
+</div>
+{% endblock %}
