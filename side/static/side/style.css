@@ -198,9 +198,9 @@ input[type=submit]:active {
 /* ----------------------------------------------- */
 
 header {
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/side/music00.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),  url(/static/side/music00.jpg);
-    background-size: cover;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/static/side/vibe4.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.445)),  url(/static/side/vibe4.jpg);
+    background-size: contain;
     background-position: center;
     height: 100vh;
     background-attachment: fixed;
@@ -217,7 +217,7 @@ header {
 }
 
 .logo {
-    height: 100px;
+    height: 70px;
     width: auto;
     float: left;
     margin-top: 20px;
@@ -744,6 +744,7 @@ footer p {
 .h3-downloads {
     color: #b0a63f;
     text-align: center;
+    background-color: #000;
 }
 
 
