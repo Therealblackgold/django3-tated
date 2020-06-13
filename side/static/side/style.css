@@ -281,13 +281,12 @@ header {
 
 
 /* Sticky navi */
-.sticky {
+/* .sticky {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 2px #efefef;
+    background-color: transparent;
     z-index: 9999;
 }
 
@@ -300,7 +299,7 @@ header {
 }
 
 .sticky .logo { display: none; }
-.sticky .logo-black { display: block; }
+.sticky .logo-black { display: block; } */
 
 /* ----------------------------------------------- */
 /* FEATURES */
@@ -759,8 +758,6 @@ footer p {
   
 
   .video {
-      width: 100%;
-      float: left;
       text-align: center;
-      padding-bottom: 25px;
+      padding-bottom:25px;
   }
