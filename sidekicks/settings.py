@@ -24,7 +24,7 @@ SECRET_KEY = 'mwf2dw0&-gadp_7p9=x_=z)r^beo%52if+a6b!fsd^nznhlkgy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sidekicksdev.pythonanywhere.com']
+ALLOWED_HOSTS = ['tated.pythonanywhere.com']
 
 # Application definition
 
