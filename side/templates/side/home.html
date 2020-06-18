@@ -52,17 +52,28 @@
           </div>
         </div>
         <br>
-        <p class="long-copy">
-          Hip Hop Artist From Gauteng Mpho Ncholo known as TADED was born on the 1st November 1999 , at the age of 15
-          inspired by his cousin Gauta to make music that will not only impact his life but others too. Taded's Music is
-          a language that doesn’t only use words but also projects emotions and honesty that everyone can Relate to.
-        </p>
-        <p class="long-copy">
-          Taded Best Hip Hop Artist of the Year nominee at the 011 Awards.He has been interviewed on numerous radio
-          stations.Taded's music touched a lot of hearts when He Hosted a High school tour at Schools situated around
-          ekhuruleni this tour amounted to 2 months During this Tour Taded was also Raising Awareness For Gender Based
-          violence and educating learners on how to deal with such encounters.
-        </p>
+        <div id="popup_box">
+          <!-- OUR PopupBox DIV-->
+          <a id="popupBoxClose">Close <span id="countDown"></span></a>
+          <p> <strong>NEW BLOG ALERT 🔥️🔥️🔥️</strong><br>please go to the menu<br>and check out my blog page.<br>
+            <img src="{% static 'side/vibe07.jpg' %}" alt="taded_sa" height="180">
+          </p>
+        </div>
+        <div id="container">
+          <!-- Main Page -->
+          <p class="long-copy">
+            Hip Hop Artist From Gauteng Mpho Ncholo known as TADED was born on the 1st November 1999 , at the age of 15
+            inspired by his cousin Gauta to make music that will not only impact his life but others too. Taded's Music
+            is
+            a language that doesn’t only use words but also projects emotions and honesty that everyone can Relate to.
+          </p>
+          <p class="long-copy">
+            Taded Best Hip Hop Artist of the Year nominee at the 011 Awards.He has been interviewed on numerous radio
+            stations.Taded's music touched a lot of hearts when He Hosted a High school tour at Schools situated around
+            ekhuruleni this tour amounted to 2 months During this Tour Taded was also Raising Awareness For Gender Based
+            violence and educating learners on how to deal with such encounters.
+          </p>
+        </div>
         <div class="row justify-content-center my-3">
           <div class="col-5">
             <img src="{% static 'side/vibe.jpg' %}" class="img-profile">
@@ -90,6 +101,7 @@
       </div>
     </div>
   </section>
+
 
   <section class="section-downloads">
     <div class="row">
@@ -242,7 +254,7 @@
         </div>
       </div>
       <div class="col span-1-of-4 box">
-        <img src="{% static 'side/kicks2.png' %}" alt="Berlin">
+        <img src="{% static 'side/side02.png' %}" alt="Berlin">
         <h3>Sidekicks dev</h3>
         <div class="city-feature">
           web developers
@@ -273,9 +285,6 @@
       <h2>Thank you for your visit play songs on reapeat</h2>
       <h3>tadedbookings@gmail.com</h3>
       <h3>+27763418012</h3>
-    </div>
-    <div class="row">
-
     </div>
   </section>
 
@@ -386,6 +395,11 @@
         Built with Django,Python,HTML,Css and JavaScript
       </p>
     </div>
+    <div class="row">
+      <script type='text/javascript'
+        src='https://www.freevisitorcounters.com/auth.php?id=6104341115c967f49b679e7700d1e186fc199e3e'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/703522/t/1"></script>
+    </div>
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -394,7 +408,60 @@
   <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
   <script src="{%  static 'side/jquery.waypoints.min.js' %}"></script>
   <script src="{% static 'side/script.js' %}"></script>
+  <script>
+    $(document).ready(function () {
 
+      // When site loaded, load the Popupbox First
+      new popup($("#popup_box"), $("#container")).load();
+
+    });
+
+    function popup(popup, container) {
+
+      var thisPopup = this,
+        timer,
+        counter = 10,
+        countDown = $("#countDown").text(counter.toString());
+
+      thisPopup.load = function () {
+
+        container.animate({
+          "opacity": "0.3"
+        }, 250, function () {
+          popup.fadeIn("250");
+        });
+
+        container.off("click").on("click", function () {
+          thisPopup.unload();
+        });
+
+        $('#popupBoxClose').off("click").on("click", function () {
+          thisPopup.unload();
+        });
+
+        timer = setInterval(function () {
+          counter--;
+          if (counter < 0) {
+            thisPopup.unload();
+          } else {
+            countDown.text(counter.toString());
+          }
+        }, 1000);
+      }
+
+      thisPopup.unload = function () {
+
+        clearInterval(timer);
+
+        popup.fadeOut("250", function () {
+          container.animate({
+            "opacity": "1"
+          }, 250);
+        });
+      }
+    }
+
+  </script>
 </body>
 
 </html>

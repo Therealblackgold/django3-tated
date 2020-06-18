@@ -6,7 +6,6 @@
 
 <!-- code bellow counts the number of blogs
 pluralize is to add s to blog if we have more than one. -->
-<h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
 <h2 class="text-center mb-5"> Taded_sa has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2>
 
 {% for blog in blogs %}
@@ -28,6 +27,7 @@ pluralize is to add s to blog if we have more than one. -->
   </div>
 </section>
 <!-- ************************************** -->
+
 {% endfor %}
 
 {% endblock %}
