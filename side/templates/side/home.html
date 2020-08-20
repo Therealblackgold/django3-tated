@@ -55,7 +55,8 @@
         <div id="popup_box">
           <!-- OUR PopupBox DIV-->
           <a id="popupBoxClose">Close <span id="countDown"></span></a>
-          <p> <strong>NEW BLOG ALERT 🔥️🔥️🔥️</strong><br>please go to the menu<br>and check out my blog page.<br>
+          <p>
+<strong>NEW BLOG ALERT 🔥️🔥️🔥️</strong><br>please go to the menu<br>and check out my blog page.<br>
             <img src="{% static 'side/vibe07.jpg' %}" alt="taded_sa" height="180">
           </p>
         </div>
@@ -132,6 +133,10 @@
     <h2>Look Book</h2>
   </div>
   <section class="section-cities">
+    <div class="video-wrapper">
+      <div class="video">
+        <iframe width="360" height="215" src="https://www.youtube.com/embed/uk6KhK7u0Zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     <div class="video">
       <iframe width="360" height="215" src="https://www.youtube.com/embed/I21cqZ8L8pk" frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -148,7 +153,9 @@
       <iframe width="360" height="215" src="https://www.youtube.com/embed/k92d0T-cJIo" frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+    </div>
   </section>
+
   <section class="section-meals" id="lookbook">
     <ul class="meals-showcase clearfix">
       <li>
@@ -289,18 +296,19 @@
   </section>
 
 
-  <section class="section-form" id="bookings">
+    <section class="section-form" id="bookings">
     <div class="row">
       <h2>We're happy to hear from you</h2>
     </div>
     <div class="row">
-      <form method="post" action="#" class="contact-form">
+      <form action="{% url 'home' %}" method="post" class="contact-form">
+      	  {% csrf_token %}
         <div class="row">
           <div class="col span-1-of-3">
             <label for="name">Name</label>
           </div>
           <div class="col span-2-of-3">
-            <input type="text" name="name" id="name" placeholder="Your name" required>
+            <input type="text"  name="message-name" id="name" placeholder="Your name" required>
           </div>
         </div>
         <div class="row">
@@ -308,30 +316,10 @@
             <label for="email">Email</label>
           </div>
           <div class="col span-2-of-3">
-            <input type="email" name="email" id="email" placeholder="Your email" required>
+            <input type="email" name="message-email"  id="email" placeholder="Your email" required>
           </div>
         </div>
-        <div class="row">
-          <div class="col span-1-of-3">
-            <label for="find-us">How did you find us?</label>
-          </div>
-          <div class="col span-2-of-3">
-            <select name="find-us" id="find-us">
-              <option value="friends" selected>Friends</option>
-              <option value="search">Search engine</option>
-              <option value="ad">Advertisement</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col span-1-of-3">
-            <label>Newsletter?</label>
-          </div>
-          <div class="col span-2-of-3">
-            <input type="checkbox" name="news" id="news" checked> Yes, please
-          </div>
-        </div>
+
         <div class="row">
           <div class="col span-1-of-3">
             <label>Drop us a line</label>
@@ -345,7 +333,7 @@
             <label>&nbsp;</label>
           </div>
           <div class="col span-2-of-3">
-            <input type="submit" value="Send it!">
+            <input type="submit" value="Send Message">
           </div>
         </div>
 

@@ -125,6 +125,7 @@ MEDIA_URL = '/media/'
 #code below is a file to save img files in your project.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
 try:
     from .local_settings import *
 except ImportError:
